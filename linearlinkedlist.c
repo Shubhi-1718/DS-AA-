@@ -3,7 +3,7 @@
 #include<alloc.h>
 #include<conio.h>
 //Declaration of Structure
-typrdef struct simplelink 
+typedef struct simplelink 
 {
     int data;
     struct simplelink *next;
