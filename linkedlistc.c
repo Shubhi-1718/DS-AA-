@@ -1,4 +1,4 @@
-/LINKED LIST 
+//LINKED LIST 
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -142,7 +142,7 @@ node *searchInUnsortedList(node *head, int item)
     {
 	head=head->next;
     }
-    return NULL;
+    return head;
 }
 
 //search in unsorted
