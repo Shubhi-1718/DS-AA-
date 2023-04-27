@@ -1,8 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define Max 1
+#define Max 3
 void push(int stack[],int *top,int item);
 int pop(int stack[],int *top);
+int peak(int stack[],int *top);
 void main()
 {
     int stack[Max],top=-1,ch,item;
@@ -10,7 +11,9 @@ void main()
     {
         printf("\n1. Push ");
         printf("\n2. Pop ");
-        printf("\n3. Exit");
+        printf("\n3. Peak");
+        printf("\n4. Exit");
+        printf("\nEnter your choice ");
         scanf("%d",&ch);
         switch(ch)
         {
@@ -31,7 +34,14 @@ void main()
                         printf("%d",item);
                     }
                     break;
-          case 3: exit(0);
+          case 3:   if(top==-1)
+                    printf("\nList is empty");
+                    else
+                    {
+                    item = peak(stack,&top);
+                    printf("\nPeak element is %d",item);
+                    }
+            case 4: exit(0);
         }
     }
 }
@@ -47,4 +57,10 @@ int pop(int stack[],int *top)
     (*top)--;
     return item;
     
+}
+int peak(int stack[],int *top)
+{
+    int item;
+    item=stack[*top];
+    return item;
 }
